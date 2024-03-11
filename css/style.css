@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    transition: all .7s ease-in-out;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container a {
+    color: black;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.container #burger, [for=burger] {
+    display: none;
+}
+
+@media screen and (max-width:500px) {
+    [for=burger] {
+        display: block;
+        position: fixed;
+        right: 20px;
+        top: 10px;
+    }
+
+    [for=burger]::before{
+        content: '≡';
+        font-size: 35px;
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        width: 40%;
+        background-color: rgba(253, 253, 253, 0.829);
+        display: none;
+        padding: 20px;
+    }
+
+    #burger:checked + [for=burger] + nav{
+        display: block;
+    }
+
+    #burger:checked + [for=burger]::before{
+        content: '⊗';
+        font-size: 35px;
+    }
+}
